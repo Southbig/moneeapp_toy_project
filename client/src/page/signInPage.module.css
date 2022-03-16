@@ -29,6 +29,10 @@
   font-size: 1em;
 }
 
+input:focus {
+  outline: transparent;
+}
+
 .signIn_button {
   margin-top: 2em;
   border: none;

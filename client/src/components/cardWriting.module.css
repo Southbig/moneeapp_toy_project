@@ -1,0 +1,50 @@
+.container {
+  margin: 4em auto;
+  width: 40em;
+  height: 40em;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 0.3em;
+  background-color: black;
+}
+
+.writing_text {
+  margin: 1em;
+  text-align: center;
+  font-size: 3em;
+  font-weight: 700;
+  color: white;
+}
+
+#text {
+  margin: 0 auto;
+  padding-left: 1em;
+  width: 29em;
+  height: 20em;
+  display: block;
+  font-size: 1.5em;
+}
+
+#text:focus {
+  outline: transparent;
+}
+
+textarea {
+  resize: none;
+}
+
+#text::placeholder {
+  font-size: 1.2em;
+}
+
+.writing_button {
+  display: block;
+  margin: auto;
+  margin-right: 1.5em;
+  width: 4em;
+  height: 1.5em;
+  font-size: 1.2em;
+  border: none;
+  background-color: white;
+}

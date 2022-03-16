@@ -1,0 +1,61 @@
+.container {
+  margin: 1em;
+  width: 30em;
+  height: 32em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid black;
+}
+
+.message_container {
+  /* height: 10em;
+  border: 1px solid black; */
+}
+
+.message_email {
+  margin: 0.5em;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+.message {
+  margin: 0.5em;
+  padding: 0.5em;
+  height: 10em;
+  border: 1px solid black;
+  overflow-y: auto;
+}
+
+.comment_craete_container {
+  display: flex;
+  justify-content: space-around;
+}
+
+#comment_craete_text {
+  width: 30em;
+}
+
+.comment_container {
+  height: 10em;
+  overflow-y: auto;
+}
+
+.comment_list {
+  margin: 0.5em;
+  padding: 0.5em;
+  height: 2.2em;
+  border: 1px solid black;
+  overflow-y: auto;
+}
+
+.comment_text {
+  margin: 1em 1em 0 0.5em;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+.comment_id {
+  font-size: 1.1em;
+  font-weight: 700;
+}
