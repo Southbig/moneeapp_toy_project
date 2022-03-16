@@ -1,0 +1,25 @@
+.container {
+  height: 100vh;
+  background-color: black;
+}
+
+.warning {
+  padding-top: 5em;
+  /* margin-top: 10em; */
+  text-align: center;
+  font-size: 2em;
+  font-weight: 600;
+  color: white;
+}
+
+.login_button {
+  margin: 4em auto;
+  display: block;
+  width: 10em;
+  height: 2em;
+  border: none;
+  border-radius: 0.3em;
+  font-size: 1.8em;
+  font-weight: 700;
+  background-color: white;
+}

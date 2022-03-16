@@ -1,0 +1,39 @@
+.container {
+  margin: 4em auto;
+  width: 40em;
+  height: 40em;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 0.3em;
+  background-color: black;
+}
+
+.login_text {
+  margin: 1em;
+  text-align: center;
+  font-size: 3em;
+  font-weight: 700;
+  color: white;
+}
+
+.email,
+.password,
+.password_check,
+.signIn_button {
+  display: block;
+  margin: 1em auto;
+  width: 25em;
+  height: 4em;
+  border-radius: 0.5em;
+  font-size: 1em;
+}
+
+.signIn_button {
+  margin-top: 2em;
+  border: none;
+  width: 17em;
+  height: 2.7em;
+  font-size: 1.5em;
+  font-weight: 700;
+}
