@@ -1,7 +1,12 @@
 import React from "react";
 import style from "./loginPage.module.css";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+  const handleClickSignin = () => {
+    navigate("/signin");
+  };
   return (
     <div className={style.container}>
       <div className={style.login_text}>로그인</div>
@@ -17,7 +22,9 @@ const LoginPage = () => {
       />
       <button className={style.login_button}>로그인</button>
       <div className={style.signIn_text}>아직 회원이 아니신가요 ?</div>
-      <button className={style.signIn_button}>회원가입</button>
+      <button className={style.signIn_button} onClick={handleClickSignin}>
+        회원가입
+      </button>
     </div>
   );
 };
