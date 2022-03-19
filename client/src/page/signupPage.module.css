@@ -20,7 +20,7 @@
 .email,
 .password,
 .password_check,
-.signIn_button {
+.signup_button {
   display: block;
   margin: 1em auto;
   width: 25em;
@@ -33,11 +33,16 @@ input:focus {
   outline: transparent;
 }
 
-.signIn_button {
+.signup_button {
   margin-top: 2em;
   border: none;
   width: 17em;
   height: 2.7em;
   font-size: 1.5em;
   font-weight: 700;
+}
+
+.message {
+  margin: auto;
+  color: white;
 }
