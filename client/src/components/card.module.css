@@ -1,5 +1,5 @@
 .container {
-  margin: 1em;
+  margin: 8em 4em;
   width: 30em;
   height: 32em;
   display: flex;
@@ -25,6 +25,10 @@
   height: 10em;
   border: 1px solid black;
   overflow-y: auto;
+}
+
+.comment_number {
+  margin: 0.5em;
 }
 
 .comment_craete_container {

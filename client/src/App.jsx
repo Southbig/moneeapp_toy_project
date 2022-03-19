@@ -8,10 +8,11 @@ import LoginPage from "./page/loginPage";
 import SignupPage from "./page/signupPage";
 import CardWriting from "./components/cardWriting";
 import Card from "./components/card";
+import CardView from "./page/cardView";
 
 import axios from "axios";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -43,9 +44,14 @@ function App() {
     isAuthenticated(data);
   };
 
+  useEffect(() => {
+    isAuthenticated();
+  }, []);
+
   return (
     <BrowserRouter>
       <Nav isLogin={isLogin} setIsLogin={setIsLogin} />
+      {/* <CardView /> */}
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route
@@ -59,7 +65,9 @@ function App() {
           }
         />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/cardView" element={<CardView />} />
         <Route path="/card" element={<Card />} />
+        <Route path="/cardwriting" element={<CardWriting />} />
       </Routes>
     </BrowserRouter>
   );

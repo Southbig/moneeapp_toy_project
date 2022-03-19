@@ -8,7 +8,7 @@ const Nav = ({ isLogin, setIsLogin }) => {
   const navigate = useNavigate();
   const handleClickMain = () => {
     if (isLogin) {
-      navigate("/card");
+      navigate("/cardView");
     } else {
       navigate("/");
     }
@@ -27,7 +27,11 @@ const Nav = ({ isLogin, setIsLogin }) => {
   };
 
   const handleClickSignup = () => {
-    navigate("/signup");
+    if (isLogin) {
+      alert("현재 로그인 중입니다");
+    } else {
+      navigate("/signup");
+    }
   };
   return (
     <div className={style.container}>

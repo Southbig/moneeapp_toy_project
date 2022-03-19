@@ -7,13 +7,13 @@ import axios from "axios";
 const LoginPage = ({ handleResponseSuccess }) => {
   const navigate = useNavigate();
   const handleClickSignup = () => {
-    navigate("/signuo");
+    navigate("/signup");
   };
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState(false);
-  console.log(email, password);
+
   const onChangeEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -70,7 +70,7 @@ const LoginPage = ({ handleResponseSuccess }) => {
     } else {
       handleLogin();
       setMessage("");
-      navigate("/card");
+      navigate("/cardView");
       return;
     }
   }, [email, password, message]);

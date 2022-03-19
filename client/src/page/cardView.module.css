@@ -1,0 +1,27 @@
+.container {
+}
+
+.card_add {
+  margin-top: 1em;
+  display: inline-block;
+  position: absolute;
+  right: 1.5em;
+  border: none;
+  width: 8em;
+  height: 2.7em;
+  font-size: 1.5em;
+  font-weight: 700;
+  background-color: black;
+  color: white;
+  border-radius: 0.6em;
+}
+
+.card_view {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.coffee {
+  color: white;
+}

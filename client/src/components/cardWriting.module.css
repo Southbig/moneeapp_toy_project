@@ -1,7 +1,7 @@
 .container {
   margin: 4em auto;
   width: 40em;
-  height: 40em;
+  height: 43em;
   display: flex;
   flex-direction: column;
   border: 1px solid black;
@@ -9,8 +9,22 @@
   background-color: black;
 }
 
-.writing_text {
+.comeback_button {
   margin: 1em;
+  width: 3.5em;
+  background-color: black;
+  color: white;
+  border: none;
+  transition-duration: 0.5s;
+}
+
+.comeback_button:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+
+.writing_text {
+  margin: 0.5em 1em 1em 1em;
   text-align: center;
   font-size: 3em;
   font-weight: 700;

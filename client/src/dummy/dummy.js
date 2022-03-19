@@ -30,6 +30,32 @@ export const dummy = {
 
       ],
       "total_comments": 1
+    },
+    {
+      "id": 3,
+      "message": "봄이네요, 이번 벚꽃은 언제 필까요 ?",
+      "comments": [
+        {
+          "user_id": 1,
+          "email": "taesik1216@naver.com",
+          "comment": "3월 말에 피지않을까요 ?"
+        }
+
+      ],
+      "total_comments": 1
+    },
+    {
+      "id": 4,
+      "message": "봄이네요, 이번 벚꽃은 언제 필까요 ?",
+      "comments": [
+        {
+          "user_id": 1,
+          "email": "taesik1216@naver.com",
+          "comment": "3월 말에 피지않을까요 ?"
+        }
+
+      ],
+      "total_comments": 1
     }
   ]
 }

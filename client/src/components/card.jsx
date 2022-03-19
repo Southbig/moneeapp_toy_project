@@ -2,16 +2,15 @@ import React from "react";
 import style from "./card.module.css";
 import { dummy } from "../dummy/dummy";
 
-const Card = () => {
-  console.log(dummy.writing[0]);
+const Card = ({ write }) => {
   return (
-    <div className={style.container} key={dummy.writing[0].id}>
-      <span>댓글 갯수: {dummy.writing[0].total_comments}</span>
+    <div className={style.container} key={write.id}>
+      <span className={style.comment_number}>
+        댓글 갯수: {write.total_comments}
+      </span>
       <div className={style.message_container}>
-        <div className={style.message_email}>
-          글 작성자: {dummy.writing[0].email}
-        </div>
-        <div className={style.message}>{dummy.writing[0].message}</div>
+        <div className={style.message_email}>글 작성자: {write.email}</div>
+        <div className={style.message}>{write.message}</div>
       </div>
       <div className={style.comment_container}>
         <div className={style.comment_craete_container}>
@@ -24,23 +23,13 @@ const Card = () => {
           <button className={style.comment_create_button}>등록</button>
         </div>
         <div className={style.comment_text}>댓글 목록</div>
-        <div className={style.comment_list}>
-          <div className={style.comment_id}>
-            {dummy.writing[0].comments[0].email}
+        {/* {console.log("write comment", write.comments)} */}
+        {write.comments.map((el) => (
+          <div className={style.comment_list} key={el.user_id}>
+            <div className={style.comment_id}>{el.email}</div>
+            <div className={style.comment}>{el.comment}</div>
           </div>
-          <div className={style.comment}>
-            {dummy.writing[0].comments[0].comment}
-          </div>
-        </div>
-
-        <div className={style.comment_list}>
-          <div className={style.comment_id}>
-            {dummy.writing[0].comments[0].email}
-          </div>
-          <div className={style.comment}>
-            {dummy.writing[0].comments[0].comment}
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
