@@ -8,5 +8,9 @@ module.exports = {
 
   //posts
   list: require('./posts/list'),
-  add: require('./posts/add')
+  add: require('./posts/add'),
+
+  // postsComments
+  commentsList: require('./comments/commentsList'),
+  commentsAdd: require('./comments/commentsAdd'),
 }

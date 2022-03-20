@@ -11,6 +11,9 @@ module.exports = {
       user_id: {
         type: Sequelize.INTEGER
       },
+      email: {
+        type: Sequelize.STRING
+      },
       message: {
         type: Sequelize.TEXT
       },

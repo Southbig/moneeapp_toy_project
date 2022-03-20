@@ -19,8 +19,10 @@ app.use(cookieParser());
 
 const usersRoute = require('./routes/users');
 const postsRoute = require('./routes/posts');
+const postsCommentsRoute = require('./routes/comments');
 app.use('/users', usersRoute);
 app.use('/posts', postsRoute);
+app.use('/comments', postsCommentsRoute);
 
 app.get('/', (req, res) => {
   res.send('Hello World!')

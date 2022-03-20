@@ -1,5 +1,5 @@
 // 글 조회하기
-const { Users, Posts } = require('../../models');
+const { Users, Posts, Posts_comments } = require('../../models');
 
 module.exports = async (req, res) => {
   try {
@@ -8,21 +8,27 @@ module.exports = async (req, res) => {
         "id",
         "user_id",
         "message",
+        "email",
         "total_comments",
       ],
       include: [
-        { model: Users, attributes: ["id"] }
+        { model: Users, attributes: ["id"] },
+        { model: Users, attributes: ["email"] },
+        { model: Posts_comments, attributes: ["comment"] }
       ]
     })
     console.log('postsData', postsData)
     let postsList = postsData.map(el => {
+      console.log('post 데이터', el)
       return {
         "id": el.id,
         "user_id": el.user_id,
+        "email": el.email,
         "message": el.message,
-        "total_comments": el.total_comments
+        "total_comments": el.Posts_comments.length,
       }
     })
+    console.log('postsList', postsList)
     return res.status(200).json({ data: postsList, message: "successfully posts show all" })
   }
   catch (err) {
