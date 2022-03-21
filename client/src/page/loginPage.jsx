@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useCallback } from "react";
 import axios from "axios";
 
-const LoginPage = ({ handleResponseSuccess, setIsLogin }) => {
+const LoginPage = ({ handleResponseSuccess }) => {
   const navigate = useNavigate();
   const handleClickSignup = () => {
     navigate("/signup");

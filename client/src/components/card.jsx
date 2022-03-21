@@ -13,7 +13,6 @@ const Card = ({ write, userInfo }) => {
   const getPostId = () => {
     setPostId(write.id);
   };
-  console.log("write", write);
   return (
     <div className={style.container} key={write.id} onClick={getPostId}>
       <span className={style.comment_number}>댓글 갯수: {comment.length}</span>

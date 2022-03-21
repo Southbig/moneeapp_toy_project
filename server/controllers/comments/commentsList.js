@@ -10,10 +10,6 @@ module.exports = async (req, res) => {
         "post_id",
         "comment",
       ],
-      include: [
-        { model: Users, attributes: ["id"] },
-        { model: Posts, attributes: ["id"] }
-      ]
     })
 
     let postsCommentsList = postsCommentsData.map(el => {
@@ -25,7 +21,7 @@ module.exports = async (req, res) => {
         "comment": el.comment,
       }
     })
-
+    console.log('postsCommentsList', postsCommentsList)
     return res.status(200).json({ data: postsCommentsList, message: "successfully posts show all" })
   }
   catch (err) {

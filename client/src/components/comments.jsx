@@ -27,7 +27,7 @@ const Comments = ({ id, userInfo, postid, comment, setComment }) => {
 
   useEffect(() => {
     getCommentsList();
-  }, [addComment]);
+  }, [addComment, userInfo]);
 
   const getCommentAdd = () => {
     if (userInfo) {
@@ -43,7 +43,6 @@ const Comments = ({ id, userInfo, postid, comment, setComment }) => {
       return;
     }
   };
-
   return (
     <div className={style.comment_container}>
       <div className={style.comment_craete_container}>
@@ -53,6 +52,7 @@ const Comments = ({ id, userInfo, postid, comment, setComment }) => {
           id={style.comment_craete_text}
           placeholder="댓글을 달아주세요"
           onChange={onChangeComments}
+          value={addComment}
         />
         <button className={style.comment_create_button} onClick={getCommentAdd}>
           등록

@@ -1,5 +1,5 @@
 // 글 조회하기
-const { Users, Posts, Posts_comments } = require('../../models');
+const { Posts, Posts_comments } = require('../../models');
 
 module.exports = async (req, res) => {
   try {
@@ -12,14 +12,10 @@ module.exports = async (req, res) => {
         "total_comments",
       ],
       include: [
-        { model: Users, attributes: ["id"] },
-        { model: Users, attributes: ["email"] },
-        { model: Posts_comments, attributes: ["comment"] }
+        { model: Posts_comments, attributes: ["id"] }
       ]
     })
-    console.log('postsData', postsData)
     let postsList = postsData.map(el => {
-      console.log('post 데이터', el)
       return {
         "id": el.id,
         "user_id": el.user_id,
@@ -28,6 +24,7 @@ module.exports = async (req, res) => {
         "total_comments": el.Posts_comments.length,
       }
     })
+
     return res.status(200).json({ data: postsList, message: "successfully posts show all" })
   }
   catch (err) {
