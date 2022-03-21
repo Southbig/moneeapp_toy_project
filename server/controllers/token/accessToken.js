@@ -22,12 +22,8 @@ module.exports = {
       return null;
     } else {
       const token = cookie.split(" ")[0]
-      // console.log('token 🏀', token)
       const tokenSlice = token.slice(4, token.length)
-      // console.log('tokenSlice 🏀', tokenSlice)
       const data = verify(tokenSlice, process.env.ACCESS_SECRET);
-      // console.log('data 🏀', data)
-
       if (!data) {
         return null
       } else {

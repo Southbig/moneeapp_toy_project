@@ -33,6 +33,8 @@ const Nav = ({ isLogin, setIsLogin }) => {
       navigate("/signup");
     }
   };
+
+  console.log("isLogin", isLogin);
   return (
     <div className={style.container}>
       <img

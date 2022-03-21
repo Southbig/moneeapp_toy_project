@@ -6,12 +6,9 @@ module.exports = async (req, res) => {
   const { message } = req.body;
 
   const accessTokenData = isAuthorized(req);
-
   const email = accessTokenData.email;
   const user_id = accessTokenData.id;
   const total_comments = 0;
-
-
 
   if (!accessTokenData) {
     res.status(401).send({ data: null, message: '유효하지 않은 토큰입니다.' });
@@ -28,21 +25,4 @@ module.exports = async (req, res) => {
         res.status(500).send({ message: 'Server Error' });
       });
   }
-
-
-  // const postData = Posts.findAll({
-  //   attributes: [
-  //     "user_id"
-  //   ],
-  //   include: [{ model: Users, attributes: ['email'] }],
-  //   order: [['createdAt', 'DESC']]
-  // })
-
-
-
-  // console.log(postData)
-
-  // postData.then(data => console.log('data', data))
-
-  // console.log('postData', postData)
 }

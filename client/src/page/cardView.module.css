@@ -1,6 +1,14 @@
 .container {
 }
 
+.postLength {
+  position: absolute;
+  top: 7em;
+  left: 1em;
+  font-size: 1.3em;
+  font-weight: 800;
+}
+
 .card_add {
   margin-top: 1em;
   display: inline-block;
@@ -18,10 +26,13 @@
 
 .card_view {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   flex-wrap: wrap;
 }
 
-.coffee {
-  color: white;
+.zero {
+  padding-top: 4em;
+  font-size: 2.5em;
+  font-weight: 800;
+  text-align: center;
 }

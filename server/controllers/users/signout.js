@@ -1,7 +1,6 @@
 module.exports = (req, res) => {
   try {
     res.clearCookie('jwt', {
-      // httpOnly: true,
     });
     res.status(205).json({ message: 'Logged out successfully' });
   } catch (err) {

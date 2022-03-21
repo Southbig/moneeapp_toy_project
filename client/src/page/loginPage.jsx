@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useCallback } from "react";
 import axios from "axios";
 
-const LoginPage = ({ handleResponseSuccess }) => {
+const LoginPage = ({ handleResponseSuccess, setIsLogin }) => {
   const navigate = useNavigate();
   const handleClickSignup = () => {
     navigate("/signup");
@@ -35,9 +35,7 @@ const LoginPage = ({ handleResponseSuccess }) => {
 
   const handleLogin = () => {
     const userinfo = { email, password };
-    if (!email || !password) {
-      setMessage("이메일, 비밀번호 모두 다 입력해야합니다.");
-    } else {
+    if (userinfo) {
       console.log("시작하자마자 요청을 한다.");
       axios
         .post(`${process.env.REACT_APP_SERVER_URL}/users/signin`, userinfo, {
@@ -48,14 +46,17 @@ const LoginPage = ({ handleResponseSuccess }) => {
           setEmail("");
           setPassword("");
           handleResponseSuccess(res.data.data.accessToken.split(" ")[1]);
+          navigate("/cardView");
         })
         .catch((err) => {
-          if (
-            err.response.data.message === "로그인 정보가 일치하지 않습니다."
-          ) {
+          if (err.response.data.message === "err") {
             setMessage("로그인 정보가 일치하지 않습니다");
+            alert("로그인 정보가 일치하지 않습니다");
           }
         });
+    } else {
+      setMessage("로그인 정보가 일치하지 않습니다");
+      alert("로그인 정보가 일치하지 않습니다");
     }
   };
 
@@ -64,13 +65,12 @@ const LoginPage = ({ handleResponseSuccess }) => {
       setMessage("이메일을 입력해주세요.");
     } else if (!checkEmail(email)) {
       setMessage("올바른 메일 양식으로 입력해주세요.");
-      return;
+      // return;
     } else if (password === "") {
       setMessage("비밀번호를 입력해주세요.");
     } else {
       handleLogin();
       setMessage("");
-      navigate("/cardView");
       return;
     }
   }, [email, password, message]);

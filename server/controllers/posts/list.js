@@ -28,7 +28,6 @@ module.exports = async (req, res) => {
         "total_comments": el.Posts_comments.length,
       }
     })
-    console.log('postsList', postsList)
     return res.status(200).json({ data: postsList, message: "successfully posts show all" })
   }
   catch (err) {

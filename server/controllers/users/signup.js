@@ -16,9 +16,6 @@ module.exports = async (req, res) => {
       },
     })
 
-
-    console.log('userEmail', userEmail)
-
     if (userEmail) {
       res.status(409).json({ message: '이미 존재하는 이메일입니다.' })
     } else {
@@ -37,7 +34,6 @@ module.exports = async (req, res) => {
       })
     }
   } catch (err) {
-    console.log(err);
     res.status(500).json({ message: "Server Error" });
   }
 };

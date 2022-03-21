@@ -5,8 +5,6 @@ module.exports = async (req, res) => {
   const { comment, post_id } = req.body;
   const accessTokenData = isAuthorized(req);
 
-  console.log('accessTokenData', accessTokenData)
-
   const email = accessTokenData.email
   const user_id = accessTokenData.id
 
@@ -21,7 +19,6 @@ module.exports = async (req, res) => {
         else res.status(401).json({ message: "요청이 잘못되었습니다." })
       })
       .catch((err) => {
-        console.log(err);
         res.status(500).send({ message: 'Server Error' });
       });
   }

@@ -16,11 +16,9 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
-  const [accessToken, setAccessToken] = useState(null);
+  const [userInfo, setUserInfo] = useState(null);
 
   const isAuthenticated = (accessToken) => {
-    console.log(accessToken);
-    setAccessToken(accessToken);
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/users/auth`, {
         headers: {
@@ -31,7 +29,7 @@ function App() {
       })
       .then((res) => {
         if (res) {
-          console.log(res.data.data.userInfo);
+          setUserInfo(res.data.data.data);
           setIsLogin(true);
         }
       })
@@ -51,7 +49,6 @@ function App() {
   return (
     <BrowserRouter>
       <Nav isLogin={isLogin} setIsLogin={setIsLogin} />
-      {/* <CardView /> */}
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route
@@ -59,15 +56,19 @@ function App() {
           element={
             <LoginPage
               handleResponseSuccess={handleResponseSuccess}
-              setAccessToken={setAccessToken}
+              setUserInfo={setUserInfo}
               isLogin={isLogin}
+              setIsLogin={setIsLogin}
             />
           }
         />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/cardView" element={<CardView />} />
+        <Route path="/cardView" element={<CardView userInfo={userInfo} />} />
         <Route path="/card" element={<Card />} />
-        <Route path="/cardwriting" element={<CardWriting />} />
+        <Route
+          path="/cardwriting"
+          element={<CardWriting userInfo={userInfo} />}
+        />
       </Routes>
     </BrowserRouter>
   );

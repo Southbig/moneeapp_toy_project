@@ -4,8 +4,6 @@ const { Users } = require('../../models');
 const { generateAccessToken, sendAccessToken } = require('../token/accessToken');
 
 module.exports = (req, res) => {
-
-  console.log(req.body)
   if (!req.body.email || !req.body.password) {
     return res.status(422).send({ message: '모든 정보가 필요합니다' })
   }
@@ -20,17 +18,11 @@ module.exports = (req, res) => {
         })
           .then((data) => {
             // bcrypt.compareSync : 비밀번호와 암호화시킨 값이 같은지 비교하는 명령어
-            // console.log(req.body.password, data.dataValues.password)
-            // console.log(bcrypt.compareSync(req.body.password, data.dataValues.password))
             if (!data || !bcrypt.compareSync(req.body.password, data.dataValues.password)) {
               return res.status(404).send({ message: 'err' })
             } else {
-
-              // console.log('삭제전', data.dataValues)
               delete data.dataValues.password;
-              // console.log('삭제후', data.dataValues)
               const AccessToken = generateAccessToken(data.dataValues);
-              // console.log("AccessToken", AccessToken)
               sendAccessToken(res, AccessToken);
             }
           })

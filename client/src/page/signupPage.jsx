@@ -56,16 +56,12 @@ const SignupPage = () => {
           if (res.status === 201) {
             handlesignupOnOff();
             navigate("/login");
+            alert("회원가입을 축하 드립니다 !");
           }
         })
         .catch((err) => {
-          console.log("회원가입에러", err.response.data);
           if (err.response.data.message === "이미 존재하는 이메일입니다.") {
             setErrorMessage("이미 사용하고 있는 이메일입니다");
-          } else if (
-            err.response.data.message === "이미 존재하는 닉네임입니다."
-          ) {
-            setErrorMessage("이미 사용하고 있는 닉네임입니다");
           }
         });
     }
