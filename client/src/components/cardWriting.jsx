@@ -25,7 +25,6 @@ const CardWriting = ({ userInfo }) => {
   const getWriteAdd = () => {
     if (userInfo) {
       const message = { message: `${write}` };
-      console.log(message);
       axios
         .post(`${process.env.REACT_APP_SERVER_URL}/posts/add`, message, {
           withCredentials: true,
