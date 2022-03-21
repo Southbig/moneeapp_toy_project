@@ -21,7 +21,6 @@ module.exports = async (req, res) => {
         "comment": el.comment,
       }
     })
-    console.log('postsCommentsList', postsCommentsList)
     return res.status(200).json({ data: postsCommentsList, message: "successfully posts show all" })
   }
   catch (err) {
