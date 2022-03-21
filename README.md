@@ -8,7 +8,7 @@
 ![로그인](https://user-images.githubusercontent.com/83868259/159215652-907fcebb-ec70-4bcd-9026-513f95e6642c.gif)
 
 
-## 글쓰고 뎃글 달기
+## 글쓰고 댓글 달기
 ![글쓰고 댓글 달기](https://user-images.githubusercontent.com/83868259/159215895-5b42e923-8231-4d38-98be-a35377af9004.gif)
 
 
