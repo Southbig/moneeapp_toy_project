@@ -56,7 +56,7 @@ const SignupPage = () => {
           if (res.status === 201) {
             handlesignupOnOff();
             navigate("/login");
-            alert("회원가입을 축하 드립니다 !");
+            alert("회원가입을 축하 드립니다");
           }
         })
         .catch((err) => {

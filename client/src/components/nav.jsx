@@ -23,6 +23,7 @@ const Nav = ({ isLogin, setIsLogin }) => {
       .then((res) => {
         setIsLogin(false);
         navigate("/");
+        alert("로그아웃 되었습니다");
       });
   };
 
@@ -34,7 +35,6 @@ const Nav = ({ isLogin, setIsLogin }) => {
     }
   };
 
-  console.log("isLogin", isLogin);
   return (
     <div className={style.container}>
       <img

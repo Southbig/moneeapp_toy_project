@@ -36,7 +36,6 @@ const LoginPage = ({ handleResponseSuccess, setIsLogin }) => {
   const handleLogin = () => {
     const userinfo = { email, password };
     if (userinfo) {
-      console.log("시작하자마자 요청을 한다.");
       axios
         .post(`${process.env.REACT_APP_SERVER_URL}/users/signin`, userinfo, {
           withCredentials: true,
@@ -47,6 +46,7 @@ const LoginPage = ({ handleResponseSuccess, setIsLogin }) => {
           setPassword("");
           handleResponseSuccess(res.data.data.accessToken.split(" ")[1]);
           navigate("/cardView");
+          alert("로그인이 되었습니다");
         })
         .catch((err) => {
           if (err.response.data.message === "err") {
